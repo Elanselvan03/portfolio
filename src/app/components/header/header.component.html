@@ -1,0 +1,37 @@
+<header [ngClass]="{'scrolled': isScrolled}">
+  <div class="container">
+    <div class="logo" (click)="scrollToSection('home')">
+      <span>JS</span>
+    </div>
+    
+    <nav class="desktop-nav">
+      <ul>
+        <li><a (click)="scrollToSection('home')">Home</a></li>
+        <li><a (click)="scrollToSection('about')">About</a></li>
+        <li><a (click)="scrollToSection('experience')">Experience</a></li>
+        <li><a (click)="scrollToSection('education')">Education</a></li>
+        <li><a (click)="scrollToSection('skills')">Skills</a></li>
+        <li><a (click)="scrollToSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="theme-toggle" (click)="themeService.toggleTheme()">
+      <fa-icon [icon]="themeService.isDarkMode() ? faSun : faMoon"></fa-icon>
+    </div>
+    
+    <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+      <fa-icon [icon]="isMobileMenuOpen ? faTimes : faBars"></fa-icon>
+    </div>
+  </div>
+  
+  <div class="mobile-menu" [ngClass]="{'open': isMobileMenuOpen}" #mobileMenu>
+    <ul>
+      <li><a (click)="scrollToSection('home')">Home</a></li>
+      <li><a (click)="scrollToSection('about')">About</a></li>
+      <li><a (click)="scrollToSection('experience')">Experience</a></li>
+      <li><a (click)="scrollToSection('education')">Education</a></li>
+      <li><a (click)="scrollToSection('skills')">Skills</a></li>
+      <li><a (click)="scrollToSection('contact')">Contact</a></li>
+    </ul>
+  </div>
+</header>

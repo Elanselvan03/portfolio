@@ -1,0 +1,24 @@
+<section class="education-section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Education</h2>
+    <div class="separator"></div>
+  </div>
+  
+  <div class="education-cards">
+    <div class="education-card" *ngFor="let item of education; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 200">
+      <div class="education-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 0l8 4-8 4-8-4 8-4z"/>
+          <path d="M8 8.5l8-4v5.5l-8 4-8-4V4.5l8 4z"/>
+        </svg>
+      </div>
+      
+      <div class="education-period">{{ item.duration }}</div>
+      
+      <h3 class="degree">{{ item.degree }}</h3>
+      <h4 class="school">{{ item.school }}</h4>
+      
+      <p class="description" *ngIf="item.description">{{ item.description }}</p>
+    </div>
+  </div>
+</section>

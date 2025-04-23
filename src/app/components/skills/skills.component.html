@@ -1,0 +1,58 @@
+<section class="skills-section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="separator"></div>
+  </div>
+  
+  <div class="skills-container">
+    <div class="skills-category" data-aos="fade-up">
+      <h3 class="category-title">Technical Skills</h3>
+      
+      <div class="skills-grid">
+        <div class="skill-item" *ngFor="let skill of technicalSkills; let i = index" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 50">
+          <div class="skill-info">
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-percentage">{{ skill.level }}%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" [style.width.%]="skill.level"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="skills-row">
+      <div class="skills-category" data-aos="fade-right">
+        <h3 class="category-title">Professional Skills</h3>
+        
+        <div class="skills-grid">
+          <div class="skill-item" *ngFor="let skill of softSkills; let i = index" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 50">
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-category" data-aos="fade-left">
+        <h3 class="category-title">Tools & Technologies</h3>
+        
+        <div class="skills-grid">
+          <div class="skill-item" *ngFor="let skill of toolSkills; let i = index" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 50">
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

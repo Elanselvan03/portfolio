@@ -1,0 +1,37 @@
+<section class="hero-section">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>
+      <span class="greeting">Hello, I'm</span>
+      <span class="name">{{ resumeData.name }}</span>
+    </h1>
+    <h2 class="title">{{ resumeData.title }}</h2>
+    
+    <p class="summary">{{ resumeData.summary }}</p>
+    
+    <div class="social-links">
+      <a *ngIf="resumeData.contact.linkedin" href="https://{{ resumeData.contact.linkedin }}" target="_blank" class="social-link">
+        <fa-icon [icon]="faLinkedin"></fa-icon>
+      </a>
+      <a *ngIf="resumeData.contact.github" href="https://{{ resumeData.contact.github }}" target="_blank" class="social-link">
+        <fa-icon [icon]="faGithub"></fa-icon>
+      </a>
+      <a *ngIf="resumeData.contact.website" href="https://{{ resumeData.contact.website }}" target="_blank" class="social-link">
+        <fa-icon [icon]="faGlobe"></fa-icon>
+      </a>
+      <a href="mailto:{{ resumeData.contact.email }}" class="social-link">
+        <fa-icon [icon]="faEnvelope"></fa-icon>
+      </a>
+    </div>
+
+    <div class="actions">
+      <button class="btn-primary" (click)="scrollToContact()">Contact Me</button>
+      <a href="assets/resume.pdf" download class="btn-secondary">Download CV</a>
+    </div>
+  </div>
+  
+  <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+    <div class="image-container">
+      <img src="https://images.pexels.com/photos/5556283/pexels-photo-5556283.jpeg" alt="Professional headshot">
+    </div>
+  </div>
+</section>

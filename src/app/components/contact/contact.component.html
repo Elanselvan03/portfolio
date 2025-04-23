@@ -1,0 +1,103 @@
+<section class="contact-section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <div class="separator"></div>
+  </div>
+  
+  <div class="contact-container">
+    <div class="contact-info" data-aos="fade-right">
+      <h3>Get In Touch</h3>
+      <p>Feel free to reach out to me for any inquiries, collaborations, or opportunities. I'm always open to discussing new projects and ideas.</p>
+      
+      <div class="info-item">
+        <fa-icon [icon]="faEnvelope"></fa-icon>
+        <div>
+          <h4>Email</h4>
+          <p><a href="mailto:{{ resumeData.contact.email }}">{{ resumeData.contact.email }}</a></p>
+        </div>
+      </div>
+      
+      <div class="info-item" *ngIf="resumeData.contact.phone">
+        <fa-icon [icon]="faPhone"></fa-icon>
+        <div>
+          <h4>Phone</h4>
+          <p><a href="tel:{{ resumeData.contact.phone }}">{{ resumeData.contact.phone }}</a></p>
+        </div>
+      </div>
+      
+      <div class="info-item">
+        <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
+        <div>
+          <h4>Location</h4>
+          <p>{{ resumeData.contact.location }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-form" data-aos="fade-left">
+      <h3>Send Message</h3>
+      
+      <div class="success-message" *ngIf="submitSuccess">
+        Your message has been sent successfully! I'll get back to you soon.
+      </div>
+      
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input 
+            type="text" 
+            formControlName="name" 
+            placeholder="Your Name" 
+            [ngClass]="{'invalid': submitted && formControls['name'].errors}"
+          >
+          <div class="error-message" *ngIf="submitted && formControls['name'].errors">
+            <span *ngIf="formControls['name'].errors['required']">Name is required</span>
+            <span *ngIf="formControls['name'].errors['minlength']">Name must be at least 2 characters</span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="email" 
+            formControlName="email" 
+            placeholder="Your Email" 
+            [ngClass]="{'invalid': submitted && formControls['email'].errors}"
+          >
+          <div class="error-message" *ngIf="submitted && formControls['email'].errors">
+            <span *ngIf="formControls['email'].errors['required']">Email is required</span>
+            <span *ngIf="formControls['email'].errors['email']">Please enter a valid email</span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="text" 
+            formControlName="subject" 
+            placeholder="Subject" 
+            [ngClass]="{'invalid': submitted && formControls['subject'].errors}"
+          >
+          <div class="error-message" *ngIf="submitted && formControls['subject'].errors">
+            <span *ngIf="formControls['subject'].errors['required']">Subject is required</span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <textarea 
+            formControlName="message" 
+            placeholder="Your Message" 
+            rows="5"
+            [ngClass]="{'invalid': submitted && formControls['message'].errors}"
+          ></textarea>
+          <div class="error-message" *ngIf="submitted && formControls['message'].errors">
+            <span *ngIf="formControls['message'].errors['required']">Message is required</span>
+            <span *ngIf="formControls['message'].errors['minlength']">Message must be at least 10 characters</span>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn-submit">
+          <span>Send Message</span>
+          <fa-icon [icon]="faPaperPlane"></fa-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

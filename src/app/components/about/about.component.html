@@ -1,0 +1,48 @@
+<section class="about-section">
+  <div class="section-header" data-aos="fade-up">
+    <h2>About Me</h2>
+    <div class="separator"></div>
+  </div>
+  
+  <div class="about-content">
+    <div class="about-text" data-aos="fade-right">
+      <p>I'm a seasoned software developer with a passion for creating elegant, efficient solutions to complex problems. With a strong background in both frontend and backend technologies, I specialize in building responsive web applications that deliver exceptional user experiences.</p>
+      
+      <p>Throughout my career, I've collaborated with cross-functional teams to deliver high-quality software products that meet and exceed client expectations. I'm committed to writing clean, maintainable code and staying current with the latest industry trends and best practices.</p>
+      
+      <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical writing and mentoring.</p>
+    </div>
+    
+    <div class="about-info" data-aos="fade-left">
+      <div class="info-item">
+        <h3>Name:</h3>
+        <p>{{ resumeData.name }}</p>
+      </div>
+      
+      <div class="info-item">
+        <h3>Email:</h3>
+        <p>{{ resumeData.contact.email }}</p>
+      </div>
+      
+      <div class="info-item">
+        <h3>Phone:</h3>
+        <p>{{ resumeData.contact.phone }}</p>
+      </div>
+      
+      <div class="info-item">
+        <h3>Location:</h3>
+        <p>{{ resumeData.contact.location }}</p>
+      </div>
+      
+      <div class="info-item">
+        <h3>Role:</h3>
+        <p>{{ resumeData.title }}</p>
+      </div>
+      
+      <div class="info-item" *ngIf="resumeData.contact.website">
+        <h3>Website:</h3>
+        <p>{{ resumeData.contact.website }}</p>
+      </div>
+    </div>
+  </div>
+</section>
